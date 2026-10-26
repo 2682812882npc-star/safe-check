@@ -1,0 +1,21 @@
+{
+  "ProjectName": "",
+  "Reviewer": "",
+  "AuthorizationConfirmed": false,
+  "AuthorizationBasis": "",
+  "AccountUseConfirmed": false,
+  "ApprovedRunAccount": "LAB-SERVER2019\\Administrator",
+  "LocalAssetScopeConfirmed": false,
+  "ApprovedComputerName": "LAB-SERVER2019",
+  "AssetScope": "",
+  "RunWindowConfirmed": false,
+  "ApprovedStart": "",
+  "ApprovedEnd": "",
+  "BaselineConfirmed": false,
+  "BaselineFileSha256": "6ef3a86868ef8f52a0beeea0a80f8bf623b8519b3de5c4434f20fedf0902ebba",
+  "ToolUseConfirmed": false,
+  "ToolUseNotes": "仅本机 Windows 自带查询、PowerShell 5.1/.NET 查询包装器；不安装工具、不连其他资产、不上传。待人工确认。",
+  "BusinessPurpose": "待人工确认",
+  "SensitiveDataHandling": "本地保存；对外提供权限待人工确认",
+  "Exceptions": []
+}

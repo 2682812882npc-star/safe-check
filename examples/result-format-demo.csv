@@ -1,0 +1,4 @@
+﻿数据性质,资产代号,条目,检查对象,目标值,示例当前值,示例结论,判定层次,示例边界
+SYNTHETIC_NOT_EVIDENCE,DEMO-ASSET,G01-003,/etc/ssh/sshd_config,root:root且不宽于0600,root:root且0600,符合,文件元数据,合成数据不证明目标机实际状态
+SYNTHETIC_NOT_EVIDENCE,DEMO-ASSET,G03-006,sudo use_pty,有效声明且覆盖适用范围,读取失败,未检查,配置,不得把读取失败转为符合
+SYNTHETIC_NOT_EVIDENCE,DEMO-ASSET,DEMO-WINRM,TCP5985,按批准来源限制,允许源TCP连接成功,待确认,网络连通,认证及非允许来源拦截未测试

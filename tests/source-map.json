@@ -1,0 +1,166 @@
+{
+  "note": "原包解包后相对路径到整理目录的映射；windows-package是嵌套ZIP的解包目录。不含原始主机采集。整理后哈希改变不表示重新验证目标状态。",
+  "files": [
+    {
+      "extracted_source_path": "企业内网攻防演练与安全运营监测平台/做简历项目/主机安全基线检查与加固项目/assets/g01_001_007_compact-20261008123849-7zch1jj.sh",
+      "published_path": "scripts/ubuntu/g01_001_007_compact.sh",
+      "source_sha256": "be3dd2d90f3604ebb85570beaa078a702df8a81af1595aa44255dfe75623a7e8",
+      "published_sha256": "8c44325334db23000004f4c65d1ba6dab6cfad7925acf8740ffc8873734237b5",
+      "change": "稳定文件名；主机名替换为lab-ubuntu20；统一UTF-8/LF；保留内核及身份比较"
+    },
+    {
+      "extracted_source_path": "企业内网攻防演练与安全运营监测平台/做简历项目/主机安全基线检查与加固项目/assets/g01_008_015_compact-20261008131947-50tf3ul.sh",
+      "published_path": "scripts/ubuntu/g01_008_015_compact.sh",
+      "source_sha256": "82706be83c1e3b8235b9f2ba2c78c91e053db07d1a4652adf27cda91a21baa69",
+      "published_sha256": "0a3fe2298caf9b337e9c285698a6ad3a11f6c9b22ff84c5a81a32c8d8d53f273",
+      "change": "稳定文件名；主机名替换为lab-ubuntu20；统一UTF-8/LF；保留内核及身份比较"
+    },
+    {
+      "extracted_source_path": "企业内网攻防演练与安全运营监测平台/做简历项目/主机安全基线检查与加固项目/assets/g01_016_022_compact-20261008140315-tkv1lny.sh",
+      "published_path": "scripts/ubuntu/g01_016_022_compact.sh",
+      "source_sha256": "1919a11a3fb5c6db5d485cbddaf0e209751818b1f469943987d5891193689de0",
+      "published_sha256": "afee74ceb131b8fd6c6dd771df065ab9bf8617a870952e09e426a152cd03da53",
+      "change": "稳定文件名；主机名替换为lab-ubuntu20；统一UTF-8/LF；保留内核及身份比较"
+    },
+    {
+      "extracted_source_path": "企业内网攻防演练与安全运营监测平台/做简历项目/主机安全基线检查与加固项目/assets/g02_001_007_compact-20261008143535-at3hx3n.sh",
+      "published_path": "scripts/ubuntu/g02_001_007_compact.sh",
+      "source_sha256": "b312f0bde9ca01236e4536c91edac900084d5ad4dff1bcfab9a3014060b8e522",
+      "published_sha256": "335c461d882ae80903c3bcc414eeaada3d920265e09831db1ac4c663f40c2674",
+      "change": "稳定文件名；主机名替换为lab-ubuntu20；统一UTF-8/LF；保留内核及身份比较"
+    },
+    {
+      "extracted_source_path": "企业内网攻防演练与安全运营监测平台/做简历项目/主机安全基线检查与加固项目/assets/g02_008_017_compact-20261008145424-qh03rfw.sh",
+      "published_path": "scripts/ubuntu/g02_008_017_compact.sh",
+      "source_sha256": "698d0e35aff63e857c8084698af57b1612cab04763791a6e5b191005889b675e",
+      "published_sha256": "c1b1ba3bdeba3be11a5fb9d8edd982874598e80f5e60bde0fbfd1d65d9349d90",
+      "change": "稳定文件名；主机名替换为lab-ubuntu20；统一UTF-8/LF；保留内核及身份比较"
+    },
+    {
+      "extracted_source_path": "企业内网攻防演练与安全运营监测平台/做简历项目/主机安全基线检查与加固项目/assets/g02_018_024_compact-20261008151933-mdltv3t.sh",
+      "published_path": "scripts/ubuntu/g02_018_024_compact.sh",
+      "source_sha256": "54c2f8ed72bc06560257dab633d14f84a57f9ed407d6d6bbc3d709e75402f0d2",
+      "published_sha256": "6714550e55c497bc788a35bdeb4383cb276b487a8b7f2a5b591390f49fe1e66a",
+      "change": "稳定文件名；主机名替换为lab-ubuntu20；统一UTF-8/LF；保留内核及身份比较"
+    },
+    {
+      "extracted_source_path": "企业内网攻防演练与安全运营监测平台/做简历项目/主机安全基线检查与加固项目/assets/g02_025_030_compact-20261008184236-dr0y41x.sh",
+      "published_path": "scripts/ubuntu/g02_025_030_compact.sh",
+      "source_sha256": "c74aa6ab454fa64d7cb4e9534bccfa2383501361f9585641e0f520d41129949e",
+      "published_sha256": "3681c1f49d0c02be3747a023fdfad62c2854c5f6e892a611e886b5ca5461cd7c",
+      "change": "稳定文件名；主机名替换为lab-ubuntu20；统一UTF-8/LF；保留内核及身份比较"
+    },
+    {
+      "extracted_source_path": "企业内网攻防演练与安全运营监测平台/做简历项目/主机安全基线检查与加固项目/assets/g02_pam_routes-20261008150943-8jyq3fu.sh",
+      "published_path": "scripts/ubuntu/g02_pam_routes.sh",
+      "source_sha256": "2ff9ca177cc2d1b685754a745331f39829c354a96ba46cf54b9b67441585a909",
+      "published_sha256": "2a13e6c1fb63774deb4c54a573ef1544184de4c97c6c742185a70c6bc76553e8",
+      "change": "稳定文件名；主机名替换为lab-ubuntu20；统一UTF-8/LF；保留内核及身份比较"
+    },
+    {
+      "extracted_source_path": "企业内网攻防演练与安全运营监测平台/做简历项目/主机安全基线检查与加固项目/assets/g03_001_004_compact-20261008193434-3zhp0vu.sh",
+      "published_path": "scripts/ubuntu/g03_001_004_compact.sh",
+      "source_sha256": "d2e44e34cca0146eda7f3539d9ce1ae5f4dfd1d5d5d58f41ef7615f2893f8a6e",
+      "published_sha256": "615670dd43e403b7e4eac0869511e9af2fac581113b99d544d99c05df38a1ac9",
+      "change": "稳定文件名；主机名替换为lab-ubuntu20；统一UTF-8/LF；保留内核及身份比较"
+    },
+    {
+      "extracted_source_path": "企业内网攻防演练与安全运营监测平台/做简历项目/主机安全基线检查与加固项目/assets/g03_005_010_compact-20261008201637-e554u8f.sh",
+      "published_path": "scripts/ubuntu/g03_005_010_compact.sh",
+      "source_sha256": "bc048f3f40b7362ff12a5c3379dba14816b37c8bbd75a16f9ada26539c887528",
+      "published_sha256": "af440347a758c2aa7ff8603f90109954036b92a2c9315dc14a37d43e28ca1f27",
+      "change": "稳定文件名；主机名替换为lab-ubuntu20；统一UTF-8/LF；保留内核及身份比较"
+    },
+    {
+      "extracted_source_path": "企业内网攻防演练与安全运营监测平台/做简历项目/主机安全基线检查与加固项目/assets/g03_011_014_compact-20261008202604-u4nqvl7.sh",
+      "published_path": "scripts/ubuntu/g03_011_014_compact.sh",
+      "source_sha256": "5c52d50a9b00b81c0a4061f35e51c392269383e6f682c71500464f9ebb80d010",
+      "published_sha256": "f572284e90b6855fa26ae870c3cb7982138ebe9c7b92e2ac2a4cbce0d36061ec",
+      "change": "稳定文件名；主机名替换为lab-ubuntu20；统一UTF-8/LF；保留内核及身份比较"
+    },
+    {
+      "extracted_source_path": "企业内网攻防演练与安全运营监测平台/做简历项目/主机安全基线检查与加固项目/assets/g03_015_018_compact-20261009193928-m5d4hgm.sh",
+      "published_path": "scripts/ubuntu/g03_015_018_compact.sh",
+      "source_sha256": "2bdb67a8953bd9c9eb4ec072b5b59802b75037104365f89e26768531e9dada7c",
+      "published_sha256": "48d923db026120a12fe49d93caffa1a5dbc373c562fda32bd44bf0022ef8643e",
+      "change": "稳定文件名；主机名替换为lab-ubuntu20；统一UTF-8/LF；保留内核及身份比较"
+    },
+    {
+      "extracted_source_path": "企业内网攻防演练与安全运营监测平台/做简历项目/主机安全基线检查与加固项目/assets/g03_019_029_compact-20261009195604-7322st9.sh",
+      "published_path": "scripts/ubuntu/g03_019_029_compact.sh",
+      "source_sha256": "1f79ac2d1b683b44ce14b4b11a1f81103078c947d9b8f3abe4f2f9466ba07b13",
+      "published_sha256": "1a084f2ca309d84200eae677f08d33b08acd167d339a4dc15afaca2fb07c030d",
+      "change": "稳定文件名；主机名替换为lab-ubuntu20；统一UTF-8/LF；保留内核及身份比较"
+    },
+    {
+      "extracted_source_path": "企业内网攻防演练与安全运营监测平台/做简历项目/主机安全基线检查与加固项目/assets/g04_001_011_compact-20261009204043-epozp5l.sh",
+      "published_path": "scripts/ubuntu/g04_001_011_compact.sh",
+      "source_sha256": "c23fe36c01695701cf5c97d1a9ad5ae7a054e12e4a52086f49b12ca252a937e3",
+      "published_sha256": "e6039df65a83048b636ca2a1c4f248e0ea5666510bf7884d1e1c2aa5345beec6",
+      "change": "稳定文件名；主机名替换为lab-ubuntu20；统一UTF-8/LF；保留内核及身份比较"
+    },
+    {
+      "extracted_source_path": "企业内网攻防演练与安全运营监测平台/做简历项目/主机安全基线检查与加固项目/assets/g05_010_016_compact-20261010101838-wj0e01v.sh",
+      "published_path": "scripts/ubuntu/g05_010_016_compact.sh",
+      "source_sha256": "7dbd491c4889b36af65983acf78e02e1097de7563cfd0d8fd75a72fc203bf9b9",
+      "published_sha256": "a6da2f8f1b058f5a0a3bf2637a04933f38d2059dc6e5247973bb53f8857dc524",
+      "change": "稳定文件名；主机名替换为lab-ubuntu20；统一UTF-8/LF；保留内核及身份比较"
+    },
+    {
+      "extracted_source_path": "windows-package/Server2019只读基线检查/Invoke-Server2019Baseline.ps1",
+      "published_path": "scripts/windows/Invoke-Server2019Baseline.ps1",
+      "source_sha256": "e5c843cab05931e5cbbb2f82c3bef05fb05ff3ade8709f3aad33279266cec2a5",
+      "published_sha256": "7cd30ebaf86aac085870a9bd9e058b170612c0d1a06610a24f2cacb44ed6526d",
+      "change": "实验主机名替换为LAB-SERVER2019；PowerShell保留UTF-8 BOM以兼容5.1；判定逻辑保留"
+    },
+    {
+      "extracted_source_path": "windows-package/Server2019只读基线检查/Baseline.Core.psm1",
+      "published_path": "scripts/windows/Baseline.Core.psm1",
+      "source_sha256": "71edff0d5d244d3dec4c588820b140ca692f046034a597d9fd01cc2e4ae33b28",
+      "published_sha256": "71edff0d5d244d3dec4c588820b140ca692f046034a597d9fd01cc2e4ae33b28",
+      "change": "实验主机名替换为LAB-SERVER2019；PowerShell保留UTF-8 BOM以兼容5.1；判定逻辑保留"
+    },
+    {
+      "extracted_source_path": "windows-package/Server2019只读基线检查/ReadOnlyNative.cs",
+      "published_path": "scripts/windows/ReadOnlyNative.cs",
+      "source_sha256": "cb9889e8c8d34ba5963a29d271745bacb92642eecad66f2a9f41c391d1f89948",
+      "published_sha256": "b9a81099fab7b5169260b3e5a28f6a01e01aef509248dbbdb3c8acd26155c772",
+      "change": "实验主机名替换为LAB-SERVER2019；PowerShell保留UTF-8 BOM以兼容5.1；判定逻辑保留"
+    },
+    {
+      "extracted_source_path": "windows-package/Server2019只读基线检查/Test-Offline.ps1",
+      "published_path": "scripts/windows/Test-Offline.ps1",
+      "source_sha256": "359c8826f7422a2edfb088033a3a4ca424937561474424a14333f727dd6b3a44",
+      "published_sha256": "c1f94b4a960b7f183bb16169d140c6c9631ca6a19c3e138f4f3cf49141e9d382",
+      "change": "实验主机名替换为LAB-SERVER2019；PowerShell保留UTF-8 BOM以兼容5.1；判定逻辑保留"
+    },
+    {
+      "extracted_source_path": "windows-package/Server2019只读基线检查/baseline-manifest.json",
+      "published_path": "scripts/windows/baseline-manifest.json",
+      "source_sha256": "f726d141228d5c66e8bf4cc44adfad6917b82bf721e7b4306c8e038e0abce76c",
+      "published_sha256": "d3f633f80f78906fc625f732e8dbe0227aef174b3f83e5baa4d41a86618b369e",
+      "change": "主机名示例化；移除未被代码使用的历史环境快照；273项基线与目标值保留"
+    },
+    {
+      "extracted_source_path": "windows-package/Server2019只读基线检查/run-context.json",
+      "published_path": "scripts/windows/run-context.example.json",
+      "source_sha256": "6ca7619bf491629160be2c73599aa6ebd28b93866291d7a5cd28cb3e9bc500bd",
+      "published_sha256": "77e6c20e52b93b16558a802b115d8eb6594ab5ea4bc80c4a98d76d2188e64752",
+      "change": "改为未填写的运行记录模板；实验主机名示例化；六项确认默认false"
+    },
+    {
+      "extracted_source_path": "windows-package/Server2019只读基线检查/检查项映射.csv",
+      "published_path": "docs/mappings/windows-检查项映射.csv",
+      "source_sha256": "5817316e20c6300db85b030a0990b421a1b0cc061dbe23f27c0d712b445b35ee",
+      "published_sha256": "5817316e20c6300db85b030a0990b421a1b0cc061dbe23f27c0d712b445b35ee",
+      "change": "保留工作表、行号、适用性及判定规则；不含主机当前值"
+    },
+    {
+      "extracted_source_path": "windows-package/Server2019只读基线检查/全表范围台账.csv",
+      "published_path": "docs/mappings/windows-全表范围台账.csv",
+      "source_sha256": "40f543857c5e537664752143f828bcbce7dfaf77fb2069109c39f353a9bcb6d3",
+      "published_sha256": "40f543857c5e537664752143f828bcbce7dfaf77fb2069109c39f353a9bcb6d3",
+      "change": "保留工作表、行号、适用性及判定规则；不含主机当前值"
+    }
+  ]
+}

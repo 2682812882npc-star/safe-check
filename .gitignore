@@ -1,0 +1,40 @@
+# 本机运行记录与真实资产身份
+**/run-context.json
+*.local.json
+.env
+.env.*
+!.env.example
+
+# 真实采集及离线运行产物（已筛选摘要放tests/）
+results/
+raw/
+evidence/
+private/
+local-evidence/
+offline-tests/
+**/*_证据_*.txt
+**/*_结果_*.txt
+**/检查_*/
+*.evtx
+*.clixml
+*.wfw
+*.inf
+
+# 压缩包、原始截图与备份不随手提交
+*.zip
+*.7z
+*.rar
+*.bak
+*.png
+*.jpg
+*.jpeg
+*.pdf
+*.xlsx
+*.vmdk
+*.vmem
+*.vmss
+
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db

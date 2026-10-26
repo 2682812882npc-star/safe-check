@@ -1,0 +1,13 @@
+{
+  "TestMode": "OFFLINE_SIMULATION_ONLY",
+  "Engine": "5.1.26100.8875",
+  "PSEdition": "Desktop",
+  "Time": "2026-10-26T16:01:54.4506155+08:00",
+  "Total": 335,
+  "Passed": 335,
+  "Failed": 0,
+  "TargetVmExecuted": false,
+  "HostBaselineCollected": false,
+  "NativeQueryMethodsCalled": false,
+  "Note": "本次2026-10-26对整理后的公开示例版实际执行的离线测试；不是沿用旧报告。"
+}

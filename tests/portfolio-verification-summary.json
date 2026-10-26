@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-26",
+  "mode": "STATIC_AND_OFFLINE_ONLY",
+  "target_vm_executed": false,
+  "ubuntu_shell_scripts": 15,
+  "embedded_python_blocks": 14,
+  "ubuntu_method_rows": 232,
+  "windows_mapping_rows": 273,
+  "document_links_checked": 63,
+  "sensitive_scan_patterns": [
+    "原实验资产名",
+    "私有IPv4",
+    "用户绝对路径",
+    "GitHub令牌",
+    "私钥正文",
+    "AWS访问密钥",
+    "URL含凭据",
+    "资产特定SID",
+    "常见凭据字面量赋值"
+  ],
+  "sensitive_scan_findings": [],
+  "total_checks": 277,
+  "failed_checks": [],
+  "status": "PASS",
+  "windows_offline_tests": {
+    "passed": 335,
+    "total": 335,
+    "target_vm_executed": false
+  },
+  "git_precommit_check": "PASS: file set, whitespace and ignored runtime evidence checked before first publication",
+  "publication_privacy_review": {
+    "files_reviewed": 55,
+    "findings": 0,
+    "personal_commit_email_excluded": true
+  }
+}

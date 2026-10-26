@@ -1,0 +1,233 @@
+﻿编号,检查项,检查位置,含义,原笔记要求摘要,对应脚本,来源文档,来源行号
+G01-001,远程登录提示内容,,避免暴露系统信息,文案符合本地策略；不含发行版信息及指定系统信息标记,g01_001_007_compact.sh,Ubuntu   基线检查  详细记录.md,242
+G01-002,远程提示文件权限,,防止提示被篡改,root:root；权限不宽于`0644`,g01_001_007_compact.sh,Ubuntu   基线检查  详细记录.md,243
+G01-003,SSH 配置文件权限,,保护配置文件,root:root；不宽于0600,g01_001_007_compact.sh,Ubuntu   基线检查  详细记录.md,203
+G01-004,SSH 主机私钥权限,,保护主机私钥,属主 root；root 组时不宽于`0600`；经确认的私钥专用组可不宽于`0640`,g01_001_007_compact.sh,Ubuntu   基线检查  详细记录.md,245
+G01-005,SSH 主机公钥权限,,防止公钥被篡改,root:root；权限不宽于`0644`,g01_001_007_compact.sh,Ubuntu   基线检查  详细记录.md,246
+G01-006,SSH 用户及组访问限制,,限定登录身份,至少配置一种`AllowUsers`、`AllowGroups`、`DenyUsers`或`DenyGroups`，名单符合本地策略,g01_001_007_compact.sh,Ubuntu   基线检查  详细记录.md,247
+G01-007,SSH 登录前提示配置,,显示登录提示,`Banner`指向绝对路径；提示文案符合本地策略且不暴露系统信息,g01_001_007_compact.sh,Ubuntu   基线检查  详细记录.md,248
+G01-008,加密算法,,,排除基线指定弱算法,g01_008_015_compact.sh,Ubuntu   基线检查  详细记录.md,258
+G01-009,无响应连接处理,,,ClientAliveInterval、ClientAliveCountMax均大于0,g01_008_015_compact.sh,Ubuntu   基线检查  详细记录.md,259
+G01-010,基于主机的认证,,,HostbasedAuthentication no,g01_008_015_compact.sh,Ubuntu   基线检查  详细记录.md,260
+G01-011,忽略rhosts文件,,,IgnoreRhosts yes,g01_008_015_compact.sh,Ubuntu   基线检查  详细记录.md,261
+G01-012,密钥交换算法,,,排除基线指定弱算法,g01_008_015_compact.sh,Ubuntu   基线检查  详细记录.md,262
+G01-013,认证宽限时间,,,LoginGraceTime为1～60秒,g01_008_015_compact.sh,Ubuntu   基线检查  详细记录.md,263
+G01-014,日志级别,,,INFO或VERBOSE,g01_008_015_compact.sh,Ubuntu   基线检查  详细记录.md,264
+G01-015,消息认证算法,,,排除基线指定弱MAC,g01_008_015_compact.sh,Ubuntu   基线检查  详细记录.md,265
+G01-016,认证尝试次数,,限制单连接尝试,MaxAuthTries ≤4,g01_016_022_compact.sh,Ubuntu   基线检查  详细记录.md,275
+G01-017,单连接会话数,,限制会话数量,MaxSessions ≤10,g01_016_022_compact.sh,Ubuntu   基线检查  详细记录.md,276
+G01-018,未认证连接限制,,限制待认证连接,MaxStartups 10:30:60或更严格,g01_016_022_compact.sh,Ubuntu   基线检查  详细记录.md,277
+G01-019,空口令SSH认证,,拒绝空口令认证,PermitEmptyPasswords no,g01_016_022_compact.sh,Ubuntu   基线检查  详细记录.md,278
+G01-020,root直接登录,,限制特权入口,PermitRootLogin no,g01_016_022_compact.sh,Ubuntu   基线检查  详细记录.md,279
+G01-021,用户自定义环境,,限制环境注入,PermitUserEnvironment no,g01_016_022_compact.sh,Ubuntu   基线检查  详细记录.md,280
+G01-022,SSH使用PAM,,接入账户会话控制,UsePAM yes,g01_016_022_compact.sh,Ubuntu   基线检查  详细记录.md,281
+G02-001,PAM运行时软件包,,提供运行支持,libpam-runtime已安装，采用最新可用版本,g02_001_007_compact.sh,Ubuntu   基线检查  详细记录.md,458
+G02-002,PAM模块软件包,,提供认证模块,libpam-modules已安装，采用最新可用版本,g02_001_007_compact.sh,Ubuntu   基线检查  详细记录.md,459
+G02-003,密码质量软件包,,提供强度检查,libpam-pwquality已安装，采用最新可用版本,g02_001_007_compact.sh,Ubuntu   基线检查  详细记录.md,460
+G02-004,pam_unix接入,,接入本地认证,5个common文件中启用对应类型的pam_unix,g02_001_007_compact.sh,Ubuntu   基线检查  详细记录.md,461
+G02-005,pam_faillock接入,,接入失败锁定,common-auth、common-account接入pam_faillock,g02_001_007_compact.sh,Ubuntu   基线检查  详细记录.md,462
+G02-006,pam_pwquality接入,,接入密码质量检查,common-password启用pam_pwquality,g02_001_007_compact.sh,Ubuntu   基线检查  详细记录.md,463
+G02-007,pam_pwhistory接入,,接入密码历史检查,common-password启用pam_pwhistory,g02_001_007_compact.sh,Ubuntu   基线检查  详细记录.md,464
+G02-008,失败锁定次数,,,`deny`为1～5,g02_008_017_compact.sh,Ubuntu   基线检查  详细记录.md,476
+G02-009,自动解锁时间,,,`unlock_time`为0或900～604800秒,g02_008_017_compact.sh,Ubuntu   基线检查  详细记录.md,477
+G02-010,新旧密码不同字符数,,,`difok≥2`,g02_008_017_compact.sh,Ubuntu   基线检查  详细记录.md,478
+G02-011,最小密码长度,,,`minlen≥14`,g02_008_017_compact.sh,Ubuntu   基线检查  详细记录.md,479
+G02-012,密码复杂度,,,各`credit≤0`；字符类别要求结合本地策略确认,g02_008_017_compact.sh,Ubuntu   基线检查  详细记录.md,480
+G02-013,相同字符连续次数,,,`maxrepeat`为1～3,g02_008_017_compact.sh,Ubuntu   基线检查  详细记录.md,481
+G02-014,连续序列长度,,,`maxsequence`为1～3,g02_008_017_compact.sh,Ubuntu   基线检查  详细记录.md,482
+G02-015,字典检查,,,不禁用`dictcheck`,g02_008_017_compact.sh,Ubuntu   基线检查  详细记录.md,483
+G02-016,强制密码质量检查,,,不禁用`enforcing`,g02_008_017_compact.sh,Ubuntu   基线检查  详细记录.md,484
+G02-017,root执行密码质量检查,,,启用`enforce_for_root`,g02_008_017_compact.sh,Ubuntu   基线检查  详细记录.md,485
+G02-018,密码历史次数,,,pam_pwhistory含`remember≥24`,g02_018_024_compact.sh,Ubuntu   基线检查  详细记录.md,497
+G02-019,root执行密码历史,,,pam_pwhistory含`enforce_for_root`,g02_018_024_compact.sh,Ubuntu   基线检查  详细记录.md,498
+G02-020,历史模块沿用新口令,,,pam_pwhistory含`use_authtok`,g02_018_024_compact.sh,Ubuntu   基线检查  详细记录.md,499
+G02-021,pam_unix空口令选项,,,不含`nullok`,g02_018_024_compact.sh,Ubuntu   基线检查  详细记录.md,500
+G02-022,pam_unix旧式历史选项,,,不含`remember`参数,g02_018_024_compact.sh,Ubuntu   基线检查  详细记录.md,501
+G02-023,密码哈希算法设置,,,password类型配置`sha512`；`yescrypt`须确认支持,g02_018_024_compact.sh,Ubuntu   基线检查  详细记录.md,502
+G02-024,pam_unix沿用新口令,,,password类型含`use_authtok`,g02_018_024_compact.sh,Ubuntu   基线检查  详细记录.md,503
+G02-025,密码最长有效期,,,`PASS_MAX_DAYS`为1～365天；本次查默认配置,g02_025_030_compact.sh,Ubuntu   基线检查  详细记录.md,515
+G02-026,密码到期提醒,,,`PASS_WARN_AGE≥7`天；本次查默认配置,g02_025_030_compact.sh,Ubuntu   基线检查  详细记录.md,516
+G02-027,默认哈希算法配置,,,`ENCRYPT_METHOD`为SHA512或YESCRYPT,g02_025_030_compact.sh,Ubuntu   基线检查  详细记录.md,517
+G02-028,密码过期后失效锁定,,,`INACTIVE`为0～45天；本次查默认配置,g02_025_030_compact.sh,Ubuntu   基线检查  详细记录.md,518
+G02-029,最近改密日期,,,不得在未来；受限未检查,g02_025_030_compact.sh,Ubuntu   基线检查  详细记录.md,519
+G02-030,账号空口令字段,,,密码字段不为空；受限未检查,g02_025_030_compact.sh,Ubuntu   基线检查  详细记录.md,520
+G03-001,登录后提示内容,`/etc/motd`：登录后提示文件；`/etc/motd.d/*`：补充提示文件,,符合本地策略，不含系统信息标记；CIS 1.6.1，161～164页,g03_001_004_compact.sh,Ubuntu   基线检查  详细记录.md,612
+G03-002,本地登录前提示内容,`/etc/issue`：本地终端登录前提示文件,,符合本地策略，不含系统信息标记；CIS 1.6.2，165～166页,g03_001_004_compact.sh,Ubuntu   基线检查  详细记录.md,613
+G03-003,登录后提示文件权限,`/etc/motd`：检查属主、属组和权限,,若存在，root:root，权限不宽于0644；CIS 1.6.4，169～170页,g03_001_004_compact.sh,Ubuntu   基线检查  详细记录.md,614
+G03-004,本地登录前提示文件权限,`/etc/issue`：检查属主、属组和权限,,root:root，权限不宽于0644；CIS 1.6.5，171～172页,g03_001_004_compact.sh,Ubuntu   基线检查  详细记录.md,615
+G03-005,sudo安装,软件包`sudo`或`sudo-ldap`，通过dpkg-query查询,,至少安装其一；CIS5.2.1，547～548页,g03_005_010_compact.sh,Ubuntu   基线检查  详细记录.md,627
+G03-006,sudo使用伪终端,`/etc/sudoers`及引入的附加配置：`use_pty`,,设置`Defaults use_pty`，不出现`!use_pty`；CIS5.2.2，549～550页,g03_005_010_compact.sh,Ubuntu   基线检查  详细记录.md,628
+G03-007,sudo独立日志配置,`/etc/sudoers`及引入的附加配置：`logfile`,,设置独立日志路径，如`/var/log/sudo.log`；CIS5.2.3，551～552页,g03_005_010_compact.sh,Ubuntu   基线检查  详细记录.md,629
+G03-008,sudo重新认证,`/etc/sudoers`及引入的附加配置：`authenticate`,,不出现`!authenticate`；CIS5.2.5，555～556页,g03_005_010_compact.sh,Ubuntu   基线检查  详细记录.md,630
+G03-009,sudo认证缓存超时,`/etc/sudoers`及引入的附加配置：`timestamp_timeout`,,0～15分钟，并符合本地策略；CIS5.2.6，557～558页,g03_005_010_compact.sh,Ubuntu   基线检查  详细记录.md,631
+G03-010,su访问限制,`/etc/pam.d/su`：pam_wheel配置；`/etc/group`、`/etc/passwd`：组成员,,设置`auth required/requisite pam_wheel.so use_uid group=指定空组`；CIS 5.2.7，559～560页,g03_005_010_compact.sh,Ubuntu   基线检查  详细记录.md,632
+G03-011,唯一UID 0账号,`/etc/passwd`：本地账号索引，第3字段为UID,,只有root的UID为0；CIS 5.4.2.1，659～660页,g03_011_014_compact.sh,Ubuntu   基线检查  详细记录.md,645
+G03-012,GID 0账号限制,`/etc/passwd`：第4字段为账号主组GID,,root主组GID为0；除sync、shutdown、halt、operator外，无其他主组GID 0账号；CIS 5.4.2.2，661～662页,g03_011_014_compact.sh,Ubuntu   基线检查  详细记录.md,646
+G03-013,唯一GID 0组,`/etc/group`：本地组索引，第3字段为GID,,只有root组的GID为0；CIS 5.4.2.3，663～664页,g03_011_014_compact.sh,Ubuntu   基线检查  详细记录.md,647
+G03-014,root密码状态,通过`passwd -S root`查询，不直接查看shadow,,状态为P或L，不得为NP；CIS 5.4.2.4，665～666页,g03_011_014_compact.sh,Ubuntu   基线检查  详细记录.md,648
+G03-015,root PATH安全,当前`PATH`及其中的目录；配置常见于`/etc/profile`、`/etc/profile.d/`、`/root/.profile`,,无空项、当前目录或无效目录；目录属主root，组及其他用户不可写；CIS 5.4.2.5，667～669页,g03_015_018_compact.sh,Ubuntu   基线检查  详细记录.md,658
+G03-016,root umask,当前会话；`/root/.bash_profile`、`.profile`、`.bashrc`等启动文件及`/etc/login.defs`,,0027或更严格；CIS 5.4.2.6，670～671页,g03_015_018_compact.sh,Ubuntu   基线检查  详细记录.md,659
+G03-017,系统账号登录Shell,`/etc/passwd`：账号Shell；`/etc/shells`：有效Shell名单；`/etc/login.defs`：UID_MIN,,适用系统账号不得使用有效登录Shell，保留原文例外；CIS 5.4.2.7，672～673页,g03_015_018_compact.sh,Ubuntu   基线检查  详细记录.md,660
+G03-018,非交互账号密码锁定,`/etc/passwd`及`/etc/shells`确定对象；`passwd -S 用户名`查询状态,,除root外，无有效登录Shell的账号应为L；CIS 5.4.2.8，674～675页,g03_015_018_compact.sh,Ubuntu   基线检查  详细记录.md,661
+G03-019,默认Shell超时,`/etc/profile`、`/etc/profile.d/*.sh`、`/etc/bash.bashrc`：全局Shell配置,,`TMOUT`为1～900秒，同时设置`readonly`和`export`,g03_019_029_compact.sh,Ubuntu   基线检查  详细记录.md,673
+G03-020,默认用户umask,全局Shell配置；`/etc/login.defs`、`/etc/default/login`；`/etc/pam.d/`中的会话配置,,`umask`为0027或更严格；新文件不宽于0640、新目录不宽于0750；核对配置覆盖关系,g03_019_029_compact.sh,Ubuntu   基线检查  详细记录.md,674
+G03-021,账号使用影子口令,`/etc/passwd`：第2字段为口令占位标记,,所有账号该字段均为`x`；检查时不输出字段内容,g03_019_029_compact.sh,Ubuntu   基线检查  详细记录.md,675
+G03-022,账号主组存在,`/etc/passwd`：第4字段为主GID；`/etc/group`：第3字段为组GID,,所有账号的主GID均在组文件中存在,g03_019_029_compact.sh,Ubuntu   基线检查  详细记录.md,676
+G03-023,shadow组成员,`/etc/group`：shadow附加成员；`/etc/passwd`：账号主GID,,shadow组无附加成员，且没有账号以其为主组,g03_019_029_compact.sh,Ubuntu   基线检查  详细记录.md,677
+G03-024,UID唯一,`/etc/passwd`：第3字段为UID,,本地账号UID不重复,g03_019_029_compact.sh,Ubuntu   基线检查  详细记录.md,678
+G03-025,GID唯一,`/etc/group`：第3字段为GID,,本地组GID不重复,g03_019_029_compact.sh,Ubuntu   基线检查  详细记录.md,679
+G03-026,用户名唯一,`/etc/passwd`：第1字段为用户名,,本地用户名不重复,g03_019_029_compact.sh,Ubuntu   基线检查  详细记录.md,680
+G03-027,组名唯一,`/etc/group`：第1字段为组名,,本地组名不重复,g03_019_029_compact.sh,Ubuntu   基线检查  详细记录.md,681
+G03-028,交互账号家目录,`/etc/passwd`：第6字段为家目录；`/etc/shells`：确定适用的交互账号,,家目录存在、属主为账号本人，权限不宽于0750,g03_019_029_compact.sh,Ubuntu   基线检查  详细记录.md,682
+G03-029,交互账号隐藏文件,各交互账号家目录下的隐藏普通文件：递归检查，仅读取属主、属组和权限,,属主为本人、属组为账号主组；普通隐藏文件不宽于0644；`.bash_history`不宽于0600；不存在`.forward`、`.rhost`；`.netrc`如需保留，应符合本地策略且不宽于0600,g03_019_029_compact.sh,Ubuntu   基线检查  详细记录.md,683
+G04-001,监听服务与端口,`ss -lntup`：当前监听状态,,服务、绑定地址及端口均经本地策略批准,g04_001_011_compact.sh,Ubuntu   基线检查  详细记录.md,738
+G04-002,IPv6状态识别,`/sys/module/ipv6/parameters/disable`；`/proc/sys/net/ipv6/conf/*/disable_ipv6`,,明确IPv6状态；启用时覆盖IPv6规则，不要求一律禁用,g04_001_011_compact.sh,Ubuntu   基线检查  详细记录.md,739
+G04-003,单一防火墙管理工具,`systemctl show`：管理服务状态；结合规则来源,,使用一套防火墙管理方案，避免冲突,g04_001_011_compact.sh,Ubuntu   基线检查  详细记录.md,740
+G04-004,UFW安装,ufw软件包；`dpkg-query`查询,,使用UFW方案时安装ufw,g04_001_011_compact.sh,Ubuntu   基线检查  详细记录.md,741
+G04-005,UFW与nftables服务互斥,nftables软件包及`nftables.service`,,nftables未安装，或其服务既未启用也未运行,g04_001_011_compact.sh,Ubuntu   基线检查  详细记录.md,742
+G04-006,UFW与持久化工具互斥,iptables-persistent软件包,,使用UFW时不安装iptables-persistent,g04_001_011_compact.sh,Ubuntu   基线检查  详细记录.md,743
+G04-007,UFW启用状态,`ufw.service`；`ufw status verbose`,,服务enabled、active，且UFW状态active,g04_001_011_compact.sh,Ubuntu   基线检查  详细记录.md,744
+G04-008,UFW回环流量,`/etc/ufw/before.rules`、`before6.rules`及当前规则,,允许lo流量；拒绝非lo来源的127.0.0.0/8；IPv6适用时包含::1,g04_001_011_compact.sh,Ubuntu   基线检查  详细记录.md,745
+G04-009,UFW出站规则,当前UFW规则；`/etc/ufw/user.rules`、`user6.rules`,,新建出站连接规则符合本地业务策略,g04_001_011_compact.sh,Ubuntu   基线检查  详细记录.md,746
+G04-010,UFW端口规则覆盖,监听清单、当前规则；涉及Docker时结合DNAT及转发链,,非回环监听端口均有规则，核对协议、地址、允许来源及IPv4/IPv6,g04_001_011_compact.sh,Ubuntu   基线检查  详细记录.md,747
+G04-011,UFW默认策略,`ufw status verbose`：当前策略；`/etc/default/ufw`：配置位置,,incoming、outgoing、routed均为deny、reject或disabled,g04_001_011_compact.sh,Ubuntu   基线检查  详细记录.md,748
+G05-001,单一时间同步方式,`systemd-timesyncd.service`、`chrony.service`；虚拟机还需核对宿主时间同步,,只采用一种时间同步方式；宿主同步例外须有证据且符合本地策略,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,773
+G05-002,timesyncd时间服务器,`/etc/systemd/timesyncd.conf`及`timesyncd.conf.d/*.conf`：时间源配置,,`NTP`和／或`FallbackNTP`指向本地批准的时间服务器，核对其他来源及覆盖关系,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,774
+G05-003,timesyncd启用状态,`systemd-timesyncd.service`：服务状态,,采用timesyncd时，应为enabled、active,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,775
+G05-004,chrony时间服务器,`/etc/chrony/chrony.conf`及其引入配置、时间源文件,,`server`或`pool`指向本地批准的时间服务器,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,776
+G05-005,chrony运行账号,chronyd进程的运行用户；服务配置,,chronyd以`_chrony`账号运行,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,777
+G05-006,chrony启用状态,`chrony.service`：服务状态,,采用chrony时，应为enabled、active,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,778
+G05-007,journald服务状态,`systemd-journald.service`：服务状态,,原文预期为static、active；不能把static判为未启用,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,779
+G05-008,journald日志访问权限,生效的`tmpfiles.d/systemd.conf`配置及日志文件、目录元数据,,日志文件不宽于0640；`/run/`和`/var/lib/systemd/`按0755限制；其他目录按原文2755、0750等类型要求核对,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,780
+G05-009,journald日志轮转,`/etc/systemd/journald.conf`及`journald.conf.d/*.conf`,,配置`SystemMaxUse`、`SystemKeepFree`、`RuntimeMaxUse`、`RuntimeKeepFree`、`MaxFileSec`，数值符合本地容量及保留策略,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,781
+G05-010,journal远程日志软件包,,,journald方案安装systemd-journal-remote（CIS 6.2.2.1.1，p.709；独立journald方案）,g05_010_016_compact.sh,g05_010_016_compact-20261010101838-wj0e01v.sh,9
+G05-011,journal上传认证配置,,,授权URL及证书路径配置正确，不读取私钥（CIS 6.2.2.1.2，p.711；独立journald方案）,g05_010_016_compact.sh,g05_010_016_compact-20261010101838-wj0e01v.sh,9
+G05-012,journal上传服务状态,,,enabled且active（CIS 6.2.2.1.3，p.713；独立journald方案）,g05_010_016_compact.sh,g05_010_016_compact-20261010101838-wj0e01v.sh,9
+G05-013,禁止journal接收远程日志,,,客户端接收service/socket均未启用未运行（CIS 6.2.2.1.4，p.715；独立journald方案）,g05_010_016_compact.sh,g05_010_016_compact-20261010101838-wj0e01v.sh,9
+G05-014,journald不转交syslog,,,独立journald方案ForwardToSyslog=no（CIS 6.2.2.2，p.717；独立journald方案）,g05_010_016_compact.sh,g05_010_016_compact-20261010101838-wj0e01v.sh,9
+G05-015,journald日志压缩,,,Compress=yes（CIS 6.2.2.3，p.719；独立journald方案）,g05_010_016_compact.sh,g05_010_016_compact-20261010101838-wj0e01v.sh,9
+G05-016,journald日志持久化,,,Storage=persistent（CIS 6.2.2.4，p.721；独立journald方案）,g05_010_016_compact.sh,g05_010_016_compact-20261010101838-wj0e01v.sh,9
+G05-017,rsyslog服务状态,`rsyslog.service`：服务状态,,采用rsyslog时，服务为enabled、active,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,796
+G05-018,rsyslog安装,rsyslog软件包；`dpkg-query`查询,,采用rsyslog方案时安装rsyslog,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,797
+G05-019,journald转交rsyslog,`/etc/systemd/journald.conf`及其附加配置；两项日志服务状态,,按本条设置`ForwardToSyslog=yes`；journald和rsyslog均loaded、active,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,798
+G05-020,rsyslog新建日志权限,`/etc/rsyslog.conf`、`/etc/rsyslog.d/*.conf`：文件创建权限配置,,$FileCreateMode为0640或更严格；本地策略例外单独记录,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,799
+G05-021,rsyslog日志记录配置,`/etc/rsyslog.conf`及引入文件；`/var/log/`中的配置目标,,所需事件按本地策略记录到对应位置，核对规则及落盘证据,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,800
+G05-022,rsyslog远程转发,`/etc/rsyslog.conf`及引入文件中的转发规则，如`@@`或`omfwd`,,配置向组织批准的集中日志服务器转发；本地配置不能证明远端已接收,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,801
+G05-023,禁止rsyslog接收远程日志,`/etc/rsyslog.conf`及引入文件：`imtcp`、`imudp`等网络输入配置,,非专用日志服务器不配置远程日志接收；专用日志服务器需确认角色例外,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,802
+G05-024,logrotate轮转配置,`/etc/logrotate.conf`、`/etc/logrotate.d/`，尤其是`rsyslog`文件,,日志轮转频率、保留数量等符合本地策略，核对配置覆盖关系,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,803
+G05-025,日志文件属主及权限,`/var/log/`及已确认的其他日志目录：仅查文件元数据,,普通日志通常不宽于0640；属主、属组按日志类型核对，wtmp、btmp、journal等使用原文分类要求,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,804
+G06-001,软件源GPG签名密钥,`/etc/apt/trusted.gpg`、`/etc/apt/trusted.gpg.d/`及软件源`Signed-By`引用的公钥文件,,签名公钥来源可信、符合本地策略；核对软件源与授权公钥的对应关系,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,818
+G06-002,软件仓库配置,`/etc/apt/sources.list`、`/etc/apt/sources.list.d/`；`apt-cache policy`查看本地仓库信息,,软件源正确、经过批准，符合本地策略,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,819
+G06-003,更新、补丁及安全软件,本地APT索引、已安装包版本、`/var/log/apt/`及相关更新配置,,安装适用的更新、补丁及所需安全软件；证据应足以判断更新状态,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,820
+G06-004,自动挂载服务,autofs软件包、`autofs.service`；`/etc/auto.master`及其引入文件,,不安装autofs；依赖保留时，服务未启用且未运行,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,821
+G06-005,Avahi服务发现,avahi-daemon软件包、对应service及socket；`/etc/avahi/avahi-daemon.conf`,,不安装avahi-daemon；依赖保留时，service及socket均未启用、未运行,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,822
+G06-006,DHCP服务器,isc-dhcp-server软件包、`isc-dhcp-server.service`及`isc-dhcp-server6.service`；`/etc/dhcp/`,,不安装DHCP服务器；依赖保留时，两项服务均未启用、未运行,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,823
+G06-007,DNS服务器,bind9软件包、`named.service`及实际别名；`/etc/bind/`,,不安装bind9；依赖保留时，服务未启用且未运行,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,824
+G06-008,dnsmasq服务,dnsmasq软件包、`dnsmasq.service`；`/etc/dnsmasq.conf`及引入配置,,不安装dnsmasq；依赖保留时，服务未启用且未运行,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,825
+G06-009,FTP服务器,vsftpd软件包、`vsftpd.service`；`/etc/vsftpd.conf`；核对其他FTP服务实现,,不保留未经批准的FTP服务；依赖保留软件包时，服务未启用且未运行,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,826
+G06-010,LDAP服务器,slapd软件包、`slapd.service`；`/etc/ldap/slapd.d/`,,不安装slapd；依赖保留时，服务未启用且未运行,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,827
+G06-011,IMAP/POP3邮件访问服务,dovecot-imapd、dovecot-pop3d软件包；`dovecot.service`及socket；`/etc/dovecot/`,,不安装所查邮件访问服务包；依赖保留时，service及socket均未启用、未运行,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,837
+G06-012,NFS文件共享服务,nfs-kernel-server软件包、`nfs-server.service`；`/etc/exports`及`/etc/exports.d/`,,不安装NFS服务器；依赖保留时，服务未启用且未运行,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,838
+G06-013,NIS服务器,原文核对ypserv软件包及`ypserv.service`；`/etc/ypserv.conf`,,不安装NIS服务器；依赖保留时，服务未启用且未运行,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,839
+G06-014,打印服务器,cups软件包、`cups.service`及socket；`/etc/cups/cupsd.conf`,,不安装cups；依赖保留时，service及socket均未启用、未运行,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,840
+G06-015,RPC绑定服务,rpcbind软件包、`rpcbind.service`及socket,,不安装rpcbind；依赖保留时，service及socket均未启用、未运行,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,841
+G06-016,rsync守护服务,rsync软件包、`rsync.service`；`/etc/rsyncd.conf`及`/etc/default/rsync`,,不安装非必要rsync；依赖保留时，守护服务未启用且未运行,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,842
+G06-017,Samba文件共享服务,samba软件包、`smbd.service`；`/etc/samba/smb.conf`,,不安装Samba服务器；依赖保留时，服务未启用且未运行,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,843
+G06-018,SNMP服务,snmpd软件包、`snmpd.service`；`/etc/snmp/snmpd.conf`,,不安装snmpd；依赖保留时，服务未启用且未运行,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,844
+G06-019,TFTP服务器,tftpd-hpa软件包、`tftpd-hpa.service`；`/etc/default/tftpd-hpa`,,不安装tftpd-hpa；依赖保留时，服务未启用且未运行,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,845
+G06-020,Web代理服务器,squid、squid-openssl软件包；`squid.service`；`/etc/squid/squid.conf`,,不安装非必要Squid服务；依赖保留时，服务未启用且未运行,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,846
+G06-021,Web服务器,apache2、nginx软件包及对应服务、socket；`/etc/apache2/`、`/etc/nginx/`,,不保留未经批准的Web服务；依赖保留软件包时，相关服务及socket未启用、未运行；业务Web服务需记录适用性或例外依据,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,856
+G06-022,xinetd服务,xinetd软件包、`xinetd.service`；`/etc/xinetd.conf`、`/etc/xinetd.d/`,,不安装xinetd；依赖保留时，服务未启用且未运行,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,857
+G06-023,邮件传输仅限本机,当前25、465、587端口监听；按实际MTA核对`/etc/postfix/main.cf`、`/etc/exim4/`或`/etc/mail/sendmail.cf`,,MTA不监听非回环地址；只提供本地邮件功能，或未使用MTA,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,858
+G06-024,NIS客户端,nis软件包；`dpkg-query`查询安装状态,,不安装nis客户端,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,859
+G06-025,rsh客户端,rsh-client软件包；`dpkg-query`查询安装状态,,不安装rsh-client,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,860
+G06-026,talk客户端,talk软件包；`dpkg-query`查询安装状态,,不安装talk,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,861
+G06-027,telnet客户端,telnet软件包；`dpkg-query`查询安装状态,,不安装telnet,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,862
+G06-028,LDAP客户端,ldap-utils软件包；`dpkg-query`查询安装状态,,不安装非必要ldap-utils；确需保留时记录业务及例外依据,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,863
+G06-029,FTP客户端,ftp软件包；`dpkg-query`查询安装状态,,不安装ftp客户端,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,864
+G07-001,cron服务状态,`cron.service`：定时任务服务,,安装cron时，服务enabled且active,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,886
+G07-002,系统crontab权限,`/etc/crontab`：系统计划任务配置,,root:root；不宽于0600,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,887
+G07-003,每小时任务目录权限,`/etc/cron.hourly`,,root:root；不宽于0700,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,888
+G07-004,每日任务目录权限,`/etc/cron.daily`,,root:root；不宽于0700,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,889
+G07-005,每周任务目录权限,`/etc/cron.weekly`,,root:root；不宽于0700,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,890
+G07-006,每月任务目录权限,`/etc/cron.monthly`,,root:root；不宽于0700,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,891
+G07-007,每年任务目录权限,`/etc/cron.yearly`,,root:root；不宽于0700,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,892
+G07-008,cron附加任务目录权限,`/etc/cron.d`,,存在时root:root、不宽于0700；原文允许目录不存在,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,893
+G07-009,crontab使用权限控制,`/etc/cron.allow`、`/etc/cron.deny`,,allow须存在，root属主，root或crontab属组，不宽于0640；deny可不存在，存在时要求相同,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,894
+G07-010,at使用权限控制,`/etc/at.allow`、`/etc/at.deny`,,安装at时，allow须存在，root属主，root或daemon属组，不宽于0640；deny可不存在，存在时要求相同,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,895
+G07-011,AIDE安装,`aide`、`aide-common`软件包,,两个软件包均已安装,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,906
+G07-012,定期完整性检查,`dailyaidecheck.timer`、`dailyaidecheck.service`,,timer为enabled且active；service为static或enabled；其他调度方式需另核实,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,907
+G07-013,审计工具完整性保护,`/etc/aide/aide.conf`及引入配置；审计工具路径,,六种审计工具纳入完整性保护，检查属性及SHA512，核对引用和排除规则,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,908
+G07-014,passwd权限,`/etc/passwd`：账号信息,,root:root；不宽于0644,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,909
+G07-015,passwd备份权限,`/etc/passwd-`,,root:root；不宽于0644,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,910
+G07-016,group权限,`/etc/group`：用户组信息,,root:root；不宽于0644,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,911
+G07-017,group备份权限,`/etc/group-`,,root:root；不宽于0644,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,912
+G07-018,shadow权限,`/etc/shadow`：密码及账户策略文件,,属主root；属组root或shadow；不宽于0640,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,913
+G07-019,shadow备份权限,`/etc/shadow-`,,属主root；属组root或shadow；不宽于0640,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,914
+G07-020,gshadow权限,`/etc/gshadow`：组认证信息,,属主root；属组root或shadow；不宽于0640,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,915
+G07-021,gshadow备份权限,`/etc/gshadow-`,,属主root；属组root或shadow；不宽于0640,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,916
+G07-022,shells权限,`/etc/shells`：有效登录Shell清单,,root:root；不宽于0644,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,917
+G07-023,历史密码文件权限,`/etc/security/opasswd`、`opasswd.old`,,存在时root:root、不宽于0600；允许不存在,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,918
+G07-024,全局可写文件与目录,本地文件系统中的普通文件、目录,,无全局可写普通文件；全局可写目录设置sticky bit,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,928
+G07-025,无属主或属组文件,本地文件系统；账号及组数据库,,不存在无法解析属主或属组的文件、目录,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,929
+G07-026,SUID/SGID文件审查,本地文件系统中的特殊权限普通文件,,逐项确认合法用途、软件包来源及文件完整性,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,930
+G08-001,/tmp 独立挂载,/etc/fstab：持久挂载配置；内核挂载表：当前状态；tmp.mount：启动挂载单元,,独立挂载（可使用tmpfs）；tmp.mount不为disabled或masked（CIS 1.1.2.1.1，p.60）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,950
+G08-002,/tmp nodev,/etc/fstab：持久挂载配置；内核挂载表：当前状态,,存在独立分区时，当前挂载选项包含nodev（CIS 1.1.2.1.2，p.63）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,951
+G08-003,/tmp nosuid,/etc/fstab：持久挂载配置；内核挂载表：当前状态,,存在独立分区时，当前挂载选项包含nosuid（CIS 1.1.2.1.3，p.65）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,952
+G08-004,/tmp noexec,/etc/fstab：持久挂载配置；内核挂载表：当前状态,,存在独立分区时，当前挂载选项包含noexec（CIS 1.1.2.1.4，p.67）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,953
+G08-005,/dev/shm 独立挂载,/etc/fstab：持久挂载配置；内核挂载表：当前状态,,使用/dev/shm时独立挂载；建议tmpfs（CIS 1.1.2.2.1，p.70）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,954
+G08-006,/dev/shm nodev,/etc/fstab：持久挂载配置；内核挂载表：当前状态,,存在独立分区时，当前挂载选项包含nodev（CIS 1.1.2.2.2，p.72）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,955
+G08-007,/dev/shm nosuid,/etc/fstab：持久挂载配置；内核挂载表：当前状态,,存在独立分区时，当前挂载选项包含nosuid（CIS 1.1.2.2.3，p.74）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,956
+G08-008,/dev/shm noexec,/etc/fstab：持久挂载配置；内核挂载表：当前状态,,存在独立分区时，当前挂载选项包含noexec（CIS 1.1.2.2.4，p.76）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,957
+G08-009,/home nodev,/etc/fstab：持久挂载配置；内核挂载表：当前状态,,存在独立分区时，当前挂载选项包含nodev（CIS 1.1.2.3.2，p.81）,未随包提供对应脚本；按方法人工复核,Ubuntu  汇总 基线检查.md,273
+G08-010,/home nosuid,/etc/fstab：持久挂载配置；内核挂载表：当前状态,,存在独立分区时，当前挂载选项包含nosuid（CIS 1.1.2.3.3，p.83）,未随包提供对应脚本；按方法人工复核,Ubuntu  汇总 基线检查.md,274
+G08-011,/var nodev,/etc/fstab：持久挂载配置；内核挂载表：当前状态,,存在独立分区时，当前挂载选项包含nodev（CIS 1.1.2.4.2，p.88）,未随包提供对应脚本；按方法人工复核,Ubuntu  汇总 基线检查.md,275
+G08-012,/var nosuid,/etc/fstab：持久挂载配置；内核挂载表：当前状态,,存在独立分区时，当前挂载选项包含nosuid（CIS 1.1.2.4.3，p.90）,未随包提供对应脚本；按方法人工复核,Ubuntu  汇总 基线检查.md,276
+G08-013,/var/tmp nodev,/etc/fstab：持久挂载配置；内核挂载表：当前状态,,存在独立分区时，当前挂载选项包含nodev（CIS 1.1.2.5.2，p.95）,未随包提供对应脚本；按方法人工复核,Ubuntu  汇总 基线检查.md,277
+G08-014,/var/tmp nosuid,/etc/fstab：持久挂载配置；内核挂载表：当前状态,,存在独立分区时，当前挂载选项包含nosuid（CIS 1.1.2.5.3，p.97）,未随包提供对应脚本；按方法人工复核,Ubuntu  汇总 基线检查.md,278
+G08-015,/var/tmp noexec,/etc/fstab：持久挂载配置；内核挂载表：当前状态,,存在独立分区时，当前挂载选项包含noexec（CIS 1.1.2.5.4，p.99）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,968
+G08-016,/var/log nodev,/etc/fstab：持久挂载配置；内核挂载表：当前状态,,存在独立分区时，当前挂载选项包含nodev（CIS 1.1.2.6.2，p.104）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,979
+G08-017,/var/log nosuid,/etc/fstab：持久挂载配置；内核挂载表：当前状态,,存在独立分区时，当前挂载选项包含nosuid（CIS 1.1.2.6.3，p.106）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,980
+G08-018,/var/log noexec,/etc/fstab：持久挂载配置；内核挂载表：当前状态,,存在独立分区时，当前挂载选项包含noexec（CIS 1.1.2.6.4，p.108）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,981
+G08-019,/var/log/audit nodev,/etc/fstab：持久挂载配置；内核挂载表：当前状态,,存在独立分区时，当前挂载选项包含nodev（CIS 1.1.2.7.2，p.113）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,982
+G08-020,/var/log/audit nosuid,/etc/fstab：持久挂载配置；内核挂载表：当前状态,,存在独立分区时，当前挂载选项包含nosuid（CIS 1.1.2.7.3，p.115）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,983
+G08-021,/var/log/audit noexec,/etc/fstab：持久挂载配置；内核挂载表：当前状态,,存在独立分区时，当前挂载选项包含noexec（CIS 1.1.2.7.4，p.117）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,984
+G09-001,禁用cramfs模块,/etc/modprobe.d/\*.conf等；/lib/modules/；/proc/modules,,模块不存在；或未加载且blacklist及install /bin/false或/bin/true齐全（CIS 1.1.1.1，p.23）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,998
+G09-002,禁用freevxfs模块,/etc/modprobe.d/\*.conf等；/lib/modules/；/proc/modules,,模块不存在；或未加载且blacklist及install /bin/false或/bin/true齐全（CIS 1.1.1.2，p.27）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,999
+G09-003,禁用hfs模块,/etc/modprobe.d/\*.conf等；/lib/modules/；/proc/modules,,模块不存在；或未加载且blacklist及install /bin/false或/bin/true齐全（CIS 1.1.1.3，p.30）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1000
+G09-004,禁用hfsplus模块,/etc/modprobe.d/\*.conf等；/lib/modules/；/proc/modules,,模块不存在；或未加载且blacklist及install /bin/false或/bin/true齐全（CIS 1.1.1.4，p.33）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1001
+G09-005,禁用jffs2模块,/etc/modprobe.d/\*.conf等；/lib/modules/；/proc/modules,,模块不存在；或未加载且blacklist及install /bin/false或/bin/true齐全（CIS 1.1.1.5，p.36）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1002
+G09-006,禁用USB存储模块,/etc/modprobe.d/\*.conf等；/lib/modules/；/proc/modules,,模块不存在；或未加载且blacklist及install /bin/false或/bin/true齐全（CIS 1.1.1.9，p.49）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1003
+G09-007,未使用文件系统模块审查,/etc/modprobe.d/\*.conf等；/lib/modules/；/proc/modules,,审查业务不需要的文件系统模块；应未加载且禁止加载，保留已用模块和原文例外（CIS 1.1.1.10，p.53）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1004
+G09-008,AppArmor软件包及版本,dpkg包数据库、APT本地索引,,apparmor、apparmor-utils均安装且为最新可用版本（CIS 1.3.1.1，p.131）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1014
+G09-009,AppArmor引导配置,/etc/default/grub及grub.d；/boot/grub/grub.cfg（正文受限）,,生成的GRUB配置所有linux行含apparmor=1和security=apparmor（CIS 1.3.1.2，p.133）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1015
+G09-010,AppArmor策略状态,/etc/apparmor.d/；aa-status当前计数,,策略已加载，处于enforce或complain；有策略但未受约束进程为0（CIS 1.3.1.3，p.135）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1016
+G09-011,引导加载器密码,/boot/grub/grub.cfg（正文受限）,,设置GRUB超级用户及PBKDF2密码保护（当前限制禁止读取密码哈希）（CIS 1.4.1，p.140）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1017
+G09-012,GRUB配置文件权限,/boot/grub/grub.cfg（仅文件元数据）,,root:root；不宽于0600（CIS 1.4.2，p.143）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1018
+G09-013,地址空间随机化ASLR,/proc/sys/kernel/randomize_va_space；sysctl.d,,kernel.randomize_va_space=2；运行与有效持久配置一致（CIS 1.5.1，p.146）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1019
+G09-014,ptrace调试限制,/proc/sys/kernel/yama/ptrace_scope；sysctl.d,,kernel.yama.ptrace_scope为1、2或3；运行与有效持久配置一致（CIS 1.5.2，p.149）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1020
+G09-015,核心转储限制,/etc/security/limits.conf、limits.d；sysctl.d；systemd/coredump.conf及覆盖,,\* hard core 0；fs.suid_dumpable=0；如使用systemd-coredump，Storage=none且ProcessSizeMax=0（CIS 1.5.3，p.153）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1021
+G09-016,prelink安装状态,dpkg包数据库,,prelink未安装（CIS 1.5.4，p.156）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1022
+G09-017,Apport错误报告,/etc/default/apport；apport.service,,Apport未启用、服务不运行；已安装时核对enabled=0（CIS 1.5.5，p.158）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1023
+G09-018,GDM登录提示,/etc/dconf/profile；/etc/dconf/db；实际目标会话,,banner-message-enable=true；提示内容符合本地组织及监控策略（CIS 1.7.2，p.178）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1033
+G09-019,GDM隐藏用户列表,/etc/dconf/profile；/etc/dconf/db；实际目标会话,,disable-user-list=true（CIS 1.7.3，p.181）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1034
+G09-020,桌面闲置锁屏,/etc/dconf/profile；/etc/dconf/db；实际目标会话,,idle-delay为1～900秒；lock-delay为0～5秒；lock-enabled=true，并符合本地策略（CIS 1.7.4，p.184）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1035
+G09-021,锁屏设置不可覆盖,/etc/dconf/profile；/etc/dconf/db；实际目标会话,,idle-delay、lock-delay、lock-enabled均锁定，不允许用户覆盖（CIS 1.7.5，p.187）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1036
+G09-022,禁用介质自动挂载,/etc/dconf/profile；/etc/dconf/db；实际目标会话,,automount=false且automount-open=false（CIS 1.7.6，p.189）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1037
+G09-023,自动挂载设置不可覆盖,/etc/dconf/profile；/etc/dconf/db；实际目标会话,,automount、automount-open均锁定，不允许用户覆盖（CIS 1.7.7，p.192）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1038
+G09-024,禁用介质自动运行,/etc/dconf/profile；/etc/dconf/db；实际目标会话,,autorun-never=true（CIS 1.7.8，p.194）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1039
+G09-025,自动运行设置不可覆盖,/etc/dconf/profile；/etc/dconf/db；实际目标会话,,autorun-never锁定，不允许用户覆盖（CIS 1.7.9，p.197）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1040
+G09-026,禁止XDMCP,/etc/gdm3/、/etc/gdm/下custom.conf和daemon.conf,,标准GDM配置的[xdmcp]区段不存在Enable=true（CIS 1.7.10，p.199）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1041
+G09-027,无线接口限制,/sys/class/net/；驱动模块状态,,没有无线接口；或相关驱动未加载且已禁止加载（CIS 3.1.2，p.330）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1042
+G09-028,蓝牙服务限制,dpkg包数据库；bluetooth.service,,bluez未安装；或属于已批准依赖且bluetooth.service未启用、未运行（CIS 3.1.3，p.333）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1043
+G09-029,关闭IP转发,/proc/sys/net/；/etc/sysctl.d等有效配置；/etc/default/ufw指定的sysctl文件,,net.ipv4.ip_forward=0；适用时net.ipv6.conf.all.forwarding=0（CIS 3.3.1，p.357）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1057
+G09-030,不发送ICMP重定向,/proc/sys/net/；/etc/sysctl.d等有效配置；/etc/default/ufw指定的sysctl文件,,IPv4 all/default.send_redirects均为0（CIS 3.3.2，p.362）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1058
+G09-031,忽略异常ICMP响应,/proc/sys/net/；/etc/sysctl.d等有效配置；/etc/default/ufw指定的sysctl文件,,net.ipv4.icmp_ignore_bogus_error_responses=1（CIS 3.3.3，p.367）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1059
+G09-032,忽略广播ICMP请求,/proc/sys/net/；/etc/sysctl.d等有效配置；/etc/default/ufw指定的sysctl文件,,net.ipv4.icmp_echo_ignore_broadcasts=1（CIS 3.3.4，p.372）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1060
+G09-033,不接受ICMP重定向,/proc/sys/net/；/etc/sysctl.d等有效配置；/etc/default/ufw指定的sysctl文件,,IPv4及适用的IPv6 all/default.accept_redirects均为0（CIS 3.3.5，p.377）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1061
+G09-034,不接受安全ICMP重定向,/proc/sys/net/；/etc/sysctl.d等有效配置；/etc/default/ufw指定的sysctl文件,,IPv4 all/default.secure_redirects均为0（CIS 3.3.6，p.382）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1062
+G09-035,反向路径过滤,/proc/sys/net/；/etc/sysctl.d等有效配置；/etc/default/ufw指定的sysctl文件,,IPv4 all/default.rp_filter均为1（严格模式）（CIS 3.3.7，p.387）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1063
+G09-036,不接受源路由,/proc/sys/net/；/etc/sysctl.d等有效配置；/etc/default/ufw指定的sysctl文件,,IPv4及适用的IPv6 all/default.accept_source_route均为0（CIS 3.3.8，p.392）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1064
+G09-037,记录可疑数据包,/proc/sys/net/；/etc/sysctl.d等有效配置；/etc/default/ufw指定的sysctl文件,,IPv4 all/default.log_martians均为1（CIS 3.3.9，p.398）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1065
+G09-038,TCP SYN Cookies,/proc/sys/net/；/etc/sysctl.d等有效配置；/etc/default/ufw指定的sysctl文件,,net.ipv4.tcp_syncookies=1（CIS 3.3.10，p.403）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1066
+G09-039,不接受IPv6路由通告,/proc/sys/net/；/etc/sysctl.d等有效配置；/etc/default/ufw指定的sysctl文件,,IPv6启用时，all/default.accept_ra均为0（CIS 3.3.11，p.408）,未随包提供对应脚本；按方法人工复核,Ubuntu   基线检查  详细记录.md,1067
